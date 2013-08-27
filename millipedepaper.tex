@@ -1,0 +1,257 @@
+\documentclass[preprint,a4paper]{elsarticle}
+
+\usepackage{afterpage}
+\usepackage{bold-extra}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%
+%%% Colours %%%
+%%%%%%%%%%%%%%%
+
+\definecolor{darkgreen}{rgb}{0, 0.6, 0}
+\definecolor{lightgrey}{gray}{0.9}
+
+%%%%%%%%%%%
+% Figures %
+%%%%%%%%%%%
+
+% Define shorter ways to include individual images
+\newcommand{\stufig}[4]						% images with default placement
+{
+	\begin{figure}
+	\begin{center}
+		\includegraphics[#1]{#2}
+		\caption{#3}
+		\label{#4}
+	\end{center}
+	\end{figure}
+}
+
+\newcommand{\stufigex}[5]					% images with specified placement
+{
+	\begin{figure}[#5]
+	\begin{center}
+		\includegraphics[#1]{#2}
+		\caption{#3}
+		\label{#4}
+	\end{center}
+	\end{figure}
+}
+
+\newcommand{\stufigexx}[5]				% full-width images with specified placement
+{
+	\begin{figure*}[#5]
+	\begin{center}
+		\includegraphics[#1]{#2}
+		\caption{#3}
+		\label{#4}
+	\end{center}
+	\end{figure*}
+}
+
+% Define the stusubfig environment
+\newenvironment{stusubfig}[1]
+{
+	\begin{figure*}[#1]
+	\begin{center}
+}
+{
+	\end{center}
+	\end{figure*}
+}
+
+%%%%%%%%%%%%%%%%%
+% Code Listings %
+%%%%%%%%%%%%%%%%%
+
+% Create a new type of float (called a stulisting) for listings
+\floatstyle{ruled}
+\newfloat{stulisting}{thp}{lop}
+\floatname{stulisting}{Listing}
+
+% Setup before using the listings package
+\renewcommand{\lstlistingname}{\textbf{Listing}}
+\def\thelstlisting{\textbf{\arabic{lstlisting}}}
+
+\lstdefinelanguage{Pseudocode}{
+morekeywords={and,assert,break,case,continue,default,down,each,else,for,function,if,not,null,or,rangeswitch,ref,return,switch,then,this,throw,to,up,var,while},
+sensitive=true,
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/}
+}
+
+\lstdefinestyle{Default}{
+abovecaptionskip=0.5cm,
+basicstyle=\scriptsize\ttfamily,
+belowcaptionskip=0.5cm,
+belowskip=0.5cm,
+columns=fixed,
+%commentstyle=\color{darkgreen},
+commentstyle=\textit, % changed from the thesis (green text looks unprofessional in a journal paper)
+language=Pseudocode,
+%numbers=left,
+numbers=none, % changed from the thesis (line numbers are less relevant here)
+numbersep=5pt,
+numberstyle=\tiny,
+mathescape=true,
+showstringspaces=false,
+stepnumber=1,
+tabsize=4
+}
+
+\lstdefinestyle{Snippet}{
+abovecaptionskip=0.5cm,
+aboveskip=0.5cm,
+basicstyle=\small\ttfamily,
+belowcaptionskip=0.5cm,
+belowskip=0.5cm,
+columns=fixed,
+commentstyle=\color{darkgreen},
+frame=lines,
+keywordstyle=\small\bfseries,
+language=Pseudocode,
+numbers=none,
+mathescape=true,
+showstringspaces=false,
+stepnumber=1,
+tabsize=4
+}
+
+% For C++ function prototypes
+\lstdefinestyle{Prototype}{
+abovecaptionskip=0.5cm,
+basicstyle=\small\ttfamily,
+belowcaptionskip=0.5cm,
+belowskip=0.5cm,
+columns=fixed,
+commentstyle=\color{darkgreen},
+language=C++,
+numbers=none,
+mathescape=true,
+showstringspaces=false,
+stepnumber=1,
+tabsize=4
+}
+
+%%%%%%%%%%%%%%%%%
+% Main Document %
+%%%%%%%%%%%%%%%%%
+
+\journal{Pattern Recognition}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{\emph{millipede}: A 3D Segmentation, Feature Identification and Visualisation System for Abdominal CT Scans}
+
+\author[ox]{S.M.~Golodetz\corref{cor1}}
+\ead{sgolodetz@gxstudios.net}
+
+\author[ox]{V.~Yeghiazaryan}
+\author[ox]{J.~Pumphrey}
+\author[ox]{C.~Nicholls}
+\author[ox]{I.~Ivan}
+\author[ox]{C.~Poon}
+\author[ch]{D.~Cranston}
+\author[ch]{A.~McIntyre}
+\author[ch]{N.~Patel}
+\author[ch]{A.~Protheroe}
+\author[ch]{M.~Sullivan}
+\author[ch]{Z.~Traill}
+
+\author[ox]{I.D.~Voiculescu\corref{cor2}}
+\ead{irina@cs.ox.ac.uk}
+
+\author[ox]{S.A.~Cameron}
+
+\cortext[cor1]{Principal corresponding author}
+\cortext[cor2]{Corresponding author}
+
+\address[ox]{Department of Computer Science, University of Oxford, Parks Road, Oxford OX1 3QD}
+\address[ch]{Churchill Hospital, Old Road, Headington, Oxford OX3 7LE}
+
+\begin{abstract}
+TODO
+\end{abstract}
+
+\begin{keyword}
+image segmentation \sep feature identification \sep abdominal CT scans \sep decision support
+\end{keyword}
+
+\end{frontmatter}
+
+%#####################
+\section{Introduction}
+%#####################
+
+TODO
+
+\nocite{gvcfbit07,gvchsi09}
+
+\section{Segmentation}
+
+TODO
+
+\section{Feature Identification}
+
+TODO
+
+\subsection{Node Classification and Stratified Region Growing}
+
+TODO
+
+\subsection{Statistical Analysis}
+
+TODO
+
+\subsection{Automatic Parameter Detection}
+
+TODO
+
+\subsection{Level Sets}
+
+TODO
+
+\section{Visualisation}
+
+TODO
+
+\section{Volume Estimation}
+
+TODO
+
+\section{Validation}
+
+\subsection{Feature Identification}
+
+TODO
+
+\subsection{Volume Estimation}
+
+TODO
+
+\section{Further Work}
+
+TODO
+
+\section{Conclusions}
+
+TODO
+
+%###########################
+\section{Acknowledgements}
+\label{sec:acknowledgements}
+%###########################
+
+We gratefully acknowledge the support of the UK Engineering and Physical Sciences Research Council (EPSRC) in funding this project: Stuart Golodetz was funded via a Doctoral Training Account (DTA); Jessica Pumphrey, Chris Nicholls and Clarice Poon were funded via the Vacation Bursary Scheme.
+
+\bibliographystyle{elsarticle-num}
+\bibliography{existingwork,mypapers}
+
+\end{document}
