@@ -159,8 +159,8 @@ tabsize=4
 \author[ox]{I.~Ivan}
 \author[ox]{C.~Poon}
 \author[ch]{D.~Cranston}
-\author[ch]{A.~McIntyre}
-\author[ch]{N.~Patel}
+%\author[ch]{A.~McIntyre}
+%\author[ch]{N.~Patel}
 \author[ch]{A.~Protheroe}
 \author[ch]{M.~Sullivan}
 \author[ch]{Z.~Traill}
@@ -177,7 +177,11 @@ tabsize=4
 \address[ch]{Churchill Hospital, Old Road, Headington, Oxford OX3 7LE}
 
 \begin{abstract}
-TODO
+The decisions that cancer medics are required to take regarding how best to treat their patients can have profound effects on patient outcomes, but they are inherently decisions that must be taken based on limited information (e.g.~that obtained from imaging). As such, it is critical that medics can derive maximum benefit from the information they do have, and much research has been devoted to the development of computerised systems that can help them in this regard. Certain features are particularly helpful in such systems, including an ability to render a 3D model of a patient's internal organs and an ability to calculate the volumes of those organs. However, both visualisation and volume calculation rely on first segmenting the available images and identifying the organs within them (the problems known, respectively, as \emph{segmentation} and \emph{feature identification}).
+
+Both segmentation and feature identification have received a great deal of attention in recent years, and impressive automated results have been obtained in many cases; however, general automatic feature identification remains a major research challenge. As a result, we believe that there is 
+
+In this paper, we present \emph{millipede}, the system that encapsulates our approach as just described.
 \end{abstract}
 
 \begin{keyword}
@@ -189,6 +193,14 @@ image segmentation \sep feature identification \sep abdominal CT scans \sep deci
 %#####################
 \section{Introduction}
 %#####################
+
+\iffalse
+The decisions that cancer medics are required to take regarding how best to treat their patients can have a profound effect on patient outcomes, but they are inherently decisions that must be taken based on limited information (e.g.~that obtained from imaging). As such, it is critical that medics can derive maximum benefit from the information they do have, and much research has been devoted to the development of computerised systems that can help them in this regard. Certain features are particularly helpful in such systems, including an ability to render a 3D model of a patient's internal organs (which is much easier for medics to visualise than a series of 2D slices) and an ability to calculate the volumes of such organs (which can have diagnostic implications). However, both visualisation and volume calculation rely on first segmenting the available images and identifying the organs within them (the problems known, respectively, as \emph{segmentation} and \emph{feature identification}).
+
+Both segmentation and feature identification have received a great deal of attention in recent years, and impressive automated results have been obtained in many cases; however, general automatic feature identification remains a major research challenge.
+
+In this paper, we present \emph{millipede}, the system that encapsulates our approach as just described.
+\fi
 
 TODO
 
